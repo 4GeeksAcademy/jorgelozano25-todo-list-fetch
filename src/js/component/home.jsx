@@ -3,13 +3,12 @@ import List from "./List";
 
 // IMPORTANTE
 
-//debido a que la api se borra todo cada ciertas horas es importante crear un usuario llamado: Jorge
-//para que funcione correctamente. Esta es la direccion de la api:
-// https://playground.4geeks.com/todo/docs#/
+//ara que funcione correctamente es importante crear un usuario llamado: Jorge
+//Esta es la direccion de la api: https://playground.4geeks.com/todo/docs#/
 
 const Home = () => {
 	const [inputValue, setInputValue] = useState('');
-	const [todos, setTodos] = useState([]); // creamos un array para las tareas
+	const [todos, setTodos] = useState([]); 
 	const apiUrlGet = "https://playground.4geeks.com/todo/users/Jorge";
 	const apiUrlPost = "https://playground.4geeks.com/todo/todos/Jorge"
 
@@ -28,7 +27,7 @@ const Home = () => {
 			.then(res => res.json())
 			.then(data => {
 				//console.log(data)
-				setTodos(data.todos || []); // aqui tuvimos que poner que devolviera una array vacia o sino me daba error cuando no tenia ningun todo
+				setTodos(data.todos || []); 
 			}
 			)
 			.catch(error => console.log("Error fetching: ", error));
@@ -84,7 +83,6 @@ const Home = () => {
 				value={inputValue}
 				onKeyPress={handleKeyPress}
 			/>
-			{/* el values es el nombre del prop, puede tener el nombre que quieras */}
 			<List values={todos}>  
 					{(todo) => {
 						return (

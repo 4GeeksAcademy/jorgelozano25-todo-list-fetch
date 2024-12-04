@@ -25,14 +25,6 @@ i {
     cursor: pointer;
 }
 
-.todo-icon {
-    transition: transform 0.3s ease;
-  }
-  
-  .todo-icon:hover {
-    transform: scale(1.5) rotate(360deg);
-  }
-
   .contador {
     width: 600px;
     display: flex;
